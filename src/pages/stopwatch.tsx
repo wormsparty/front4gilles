@@ -31,20 +31,17 @@ const Stopwatch = () => {
   return <div className="flex items-center justify-center h-screen">
     <div className="text-left space-y-6">
       <h1 className="text-5xl font-bold w-[200px]">{formatTime(time)}</h1>
-      <div className="flex space-x-4">
-        <Button
+      <div className="flex items-center space-x-2">
+        <Button className="w-1/2"
             variant={isRunning ? 'destructive' : 'default'}
             onClick={() => setIsRunning(!isRunning)}
         >
           {isRunning ? 'Pause' : 'Start'}
         </Button>
-        <Button
+        <Button className="w-1/2"
             variant='secondary'
             onClick={() => setTime(0)}
             disabled={isRunning}
-            className={`px-6 py-3 rounded-lg font-medium transition ${
-                isRunning ? 'opacity-50 cursor-not-allowed' : ''
-            }`}
         >
           Reset
         </Button>
