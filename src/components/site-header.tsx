@@ -1,4 +1,5 @@
 import {type ReactNode} from "react";
+import {ThemeSwitcher} from "@/components/theme-switcher.tsx";
 
 type SiteHeaderProps = {
     logo: ReactNode,
@@ -18,6 +19,11 @@ export function SiteHeader({ logo, appName, version }: SiteHeaderProps) {
                         <div className="flex ms-2 leading-none">
                             <span className="font-semibold ms-1">{appName}</span>
                             <span className="ms-2">{version}</span>
+                        </div>
+                    </div>
+                    <div className="flex ms-auto items-center justify-center">
+                        <div>
+                            <ThemeSwitcher/>
                         </div>
                     </div>
                 </div>

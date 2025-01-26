@@ -7,6 +7,7 @@ import NotFound from './pages/not-found';
 import { version } from '../package.json';
 import {Award} from "lucide-react";
 import {SiteHeader} from "@/components/site-header.tsx";
+import {ThemeProvider} from "@/components/theme-provider.tsx";
 
 const AppContent = () => {
     return <>
@@ -20,9 +21,11 @@ const AppContent = () => {
 
 const App: React.FC = () => {
     return (
-        <Router>
-            <AppContent />
-        </Router>
+        <ThemeProvider defaultTheme='system' storageKey='front4gilles-theme'>
+            <Router>
+                <AppContent />
+            </Router>
+        </ThemeProvider>
     );
 };
 

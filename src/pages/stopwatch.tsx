@@ -28,24 +28,21 @@ const Stopwatch = () => {
     ).padStart(2, '0')}`;
   };
 
-  return <div className="flex items-center justify-center h-screen bg-gray-900 text-white">
-    <div className="text-center space-y-6">
-      <h1 className="text-5xl font-bold">{formatTime(time)}</h1>
+  return <div className="flex items-center justify-center h-screen">
+    <div className="text-left space-y-6">
+      <h1 className="text-5xl font-bold w-[200px]">{formatTime(time)}</h1>
       <div className="flex space-x-4">
         <Button
+            variant={isRunning ? 'destructive' : 'default'}
             onClick={() => setIsRunning(!isRunning)}
-            className={`px-6 py-3 rounded-lg font-medium transition ${
-                isRunning
-                    ? 'bg-red-600 hover:bg-red-700'
-                    : 'bg-green-600 hover:bg-green-700'
-            }`}
         >
           {isRunning ? 'Pause' : 'Start'}
         </Button>
         <Button
+            variant='secondary'
             onClick={() => setTime(0)}
             disabled={isRunning}
-            className={`px-6 py-3 rounded-lg font-medium bg-gray-600 hover:bg-gray-700 transition ${
+            className={`px-6 py-3 rounded-lg font-medium transition ${
                 isRunning ? 'opacity-50 cursor-not-allowed' : ''
             }`}
         >
